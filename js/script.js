@@ -5,17 +5,27 @@
 // This file contains the JS functions for index.html
 
 "use strict"
+
 /**
- * This function calculates volume of sphere.
+ * Check servie worker.
+ */
+ if (navigator.serviceWorker) {
+  navigator.serviceWorker.register("/ICS2O-Unit-3-03-JS/sw.js", {
+    scope: "/ICS2O-Unit-3-03-JS/",
+  })
+}
+
+/**
+ * This function displays an alert.
+ * Math
  */
 function calculate() {
   // input
-  const radius = parseFloat(document.getElementById("radius-of-sphere").value)
+  const r = parseInt(document.getElementById("radius").value)
 
   // process
-  const volume = (4 / 3) * Math.PI * radius ** 3
-
+  const math = (4.0 / 3.0) * Math.PI * Math.pow(r, 3)
   // output
-  document.getElementById("volume").innerHTML =
-    "volume is: " + volume.toFixed(2) + " mm³"
+  document.getElementById("math").innerHTML =
+    "The volume is: " + math.toFixed(2) + " units³"
 }
