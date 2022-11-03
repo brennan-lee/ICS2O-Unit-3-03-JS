@@ -1,23 +1,20 @@
-// Copyright (c) 2020 Mr. Coxall All rights reserved
+// Copyright (c) 2022 Brennan Lee All rights reserved
 //
-// Created by: Mr. Coxall
-// Created on: Sep 2020
+// Created by: Brennan Lee
+// Created on: nov 2022
 // This file contains the JS functions for index.html
 
-"use strict"
-
+'use strict'
 /**
- * Check servie worker.
+ * This function calculates volume of sphere.
  */
-if (navigator.serviceWorker) {
-  navigator.serviceWorker.register("/ICS2O-PWA-Test/sw.js", {
-    scope: "/ICS2O-PWA-Test/",
-  })
-}
+function calculate () {
+  // input
+  const radius = parseFloat(document.getElementById("radius-of-sphere").value)
 
-/**
- * This function displays an alert.
- */
-function myButtonClicked() {
-  document.getElementById("hello-world").innerHTML = "<p>Hello, World!</p>"
+  // process
+  const volume = 4 / 3 * Math.PI * radius ** 3
+
+  // output
+  document.getElementById('volume').innerHTML = 'volume is: ' + volume.toFixed(2) + ' mm³'
 }
